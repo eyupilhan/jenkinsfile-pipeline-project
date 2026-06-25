@@ -1,41 +1,101 @@
+![Jenkins](https://img.shields.io/badge/Jenkins-CI-blue)
+![Python](https://img.shields.io/badge/Python-3.x-green)
+![Pipeline](https://img.shields.io/badge/Pipeline-Declarative-orange)
+
 # Jenkins Pipeline Project
 
-## Overview
+## Project Overview
 
-This project demonstrates the implementation of a CI/CD pipeline using Jenkins and GitHub integration.
+This project demonstrates the implementation of a **Declarative Jenkins Pipeline** for automating the execution of a Python application. It showcases the fundamentals of **Pipeline as Code**, Continuous Integration (CI), and Jenkins automation using a GitHub repository.
 
-The pipeline automates the software delivery process, including source code retrieval, build, test, and deployment stages.
+The pipeline validates the runtime environment, retrieves the latest source code, executes the application, and performs post-build cleanup.
+
+---
 
 ## Technologies Used
 
-- Jenkins
-- Git
-- GitHub
-- Docker
-- Linux
+* Jenkins
+* Git
+* GitHub
+* Python
+* Linux
+* Pipeline as Code
+
+---
+
+## Pipeline Workflow
+
+```text
+GitHub Repository
+        │
+        ▼
+   Jenkins Pipeline
+        │
+        ▼
+   Checkout Source
+        │
+        ▼
+   Verify Python
+        │
+        ▼
+ Execute Python Script
+        │
+        ▼
+   Post-build Actions
+```
+
+---
 
 ## Pipeline Stages
 
-1. Source Code Checkout
-2. Build
-3. Test
-4. Deployment
-5. Validation
+| Stage           | Description                                   |
+| --------------- | --------------------------------------------- |
+| Checkout        | Retrieves the latest source code from GitHub  |
+| Verify Python   | Confirms the Python runtime is available      |
+| Run Application | Executes the Python application               |
+| Post Actions    | Reports build status and cleans the workspace |
 
-## Features
+---
 
-- Automated build process
-- Continuous Integration workflow
-- Version control integration
-- Deployment automation
-- Pipeline as Code approach
+## Repository Structure
+
+```text
+jenkinsfile-pipeline-project/
+│
+├── Jenkinsfile
+├── pipeline.py
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Key Features
+
+* Declarative Jenkins Pipeline
+* Pipeline as Code approach
+* Automated Python execution
+* GitHub integration
+* Workspace cleanup after execution
+
+---
 
 ## Learning Outcomes
 
-Through this project, I gained hands-on experience with:
+Through this project, I gained practical experience with:
 
-- Jenkins Pipelines
-- CI/CD concepts
-- Git workflows
-- Build automation
-- Deployment processes
+* Jenkins Pipeline syntax
+* Continuous Integration (CI)
+* Pipeline as Code principles
+* GitHub and Jenkins integration
+* Build automation workflows
+
+---
+
+## Future Improvements
+
+* Add automated unit testing
+* Build and publish Docker images
+* Integrate with Docker Hub or Amazon ECR
+* Deploy to AWS EC2 or Kubernetes
+* Add automated notifications

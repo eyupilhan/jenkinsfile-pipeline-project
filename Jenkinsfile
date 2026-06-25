@@ -21,6 +21,7 @@ pipeline {
 
         stage('Run Application') {
             steps {
+                echo "Running ${APP_NAME}..."
                 sh 'python3 pipeline.py'
             }
         }

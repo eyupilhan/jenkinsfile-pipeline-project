@@ -6,9 +6,9 @@
 
 ## Project Overview
 
-This project demonstrates the implementation of a **Declarative Jenkins Pipeline** for automating the execution of a Python application. It showcases the fundamentals of **Pipeline as Code**, Continuous Integration (CI), and Jenkins automation using a GitHub repository.
+This project demonstrates the implementation of a **Declarative Jenkins Pipeline** for automating the execution of a Python application. It highlights the core concepts of **Pipeline as Code (PaC)** and **Continuous Integration (CI)** using Jenkins and GitHub.
 
-The pipeline validates the runtime environment, retrieves the latest source code, executes the application, and performs post-build cleanup.
+The pipeline automatically checks out the latest source code, verifies the Python runtime, executes the application, and performs post-build actions, providing a simple yet realistic example of a CI workflow.
 
 ---
 
@@ -19,29 +19,26 @@ The pipeline validates the runtime environment, retrieves the latest source code
 * GitHub
 * Python
 * Linux
-* Pipeline as Code
+* Pipeline as Code (PaC)
+* CI/CD
 
 ---
 
 ## Pipeline Workflow
 
 ```text
+Developer
+    │
+    ▼
 GitHub Repository
-        │
-        ▼
-   Jenkins Pipeline
-        │
-        ▼
-   Checkout Source
-        │
-        ▼
-   Verify Python
-        │
-        ▼
- Execute Python Script
-        │
-        ▼
-   Post-build Actions
+    │
+    ▼
+Jenkins Pipeline
+    │
+    ├── Checkout
+    ├── Verify Python
+    ├── Run Application
+    └── Post Actions
 ```
 
 ---
@@ -94,8 +91,8 @@ Through this project, I gained practical experience with:
 
 ## Future Improvements
 
-* Add automated unit testing
-* Build and publish Docker images
-* Integrate with Docker Hub or Amazon ECR
-* Deploy to AWS EC2 or Kubernetes
-* Add automated notifications
+- Add automated unit testing
+- Build and publish Docker images
+- Integrate with Docker Hub or Amazon ECR
+- Deploy to AWS EC2 or Kubernetes
+- Add email or Slack notifications

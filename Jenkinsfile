@@ -1,12 +1,43 @@
 pipeline {
     agent any
+
+    environment {
+        APP_NAME = "jenkinsfile-pipeline-project"
+    }
+
     stages {
-        stage('run') {
+
+        stage('Checkout') {
             steps {
-                echo 'Clarusway_Way to Reinvent Yourself'
+                checkout scm
+            }
+        }
+
+        stage('Verify Python') {
+            steps {
                 sh 'python3 --version'
+            }
+        }
+
+        stage('Run Application') {
+            steps {
                 sh 'python3 pipeline.py'
             }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully.'
+        }
+
+        failure {
+            echo 'Pipeline failed.'
+        }
+
+        always {
+            cleanWs()
         }
     }
 }
